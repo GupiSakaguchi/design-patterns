@@ -8,11 +8,11 @@ class Report
   end
 end
 
-html = lambda do
+html = -> do
   puts "html"
 end
 
-text = lambda do
+text = -> do
   puts "text"
 end
 
