@@ -39,23 +39,26 @@ class Drive
   end
 end
 
+#directer
 class ComputerBuilder
-  attr_accessor :computer
-
-  def initialize
-    @computer = Computer.new
-  end
+  attr_reader :computer
 
   def turbo(has_turbo_cpu=true)
     @computer.motherboard.cpu = TurboCPU.new
   end
 
-  def display=(display)
-    @computer.display = display
-  end
-
   def memory_size=(size_in_mb)
     @computer.motherboard.memory_size = size_in_mb
+  end
+end
+
+class DesktopBuilder < ComputerBuilder
+  def initialize
+    @computer = Computer.new
+  end
+
+  def display=(display)
+    @computer.display = display
   end
 
   def add_cd(writer=false)
@@ -69,7 +72,14 @@ class ComputerBuilder
   def add_hard_disk(size_in_mb)
     @computer.drives << Drive.new(:hard_disk,size_in_mb,true)
   end
+
 end
+
+builder = DesktopBuilder.new
+builder.turbo
+builder.add_cd(true)
+builder.add_dvd
+builder.add_hard_disk(20000)
 
 
 
