@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    debase (0.2.1)
+      debase-ruby_core_source
+    debase-ruby_core_source (0.9.6)
+    rake (12.0.0)
+    ruby-debug-ide (0.6.0)
+      rake (>= 0.8.1)
+    sqlite3 (1.3.13)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  debase
+  ruby-debug-ide
+  sqlite3
+
+BUNDLED WITH
+   1.13.7
